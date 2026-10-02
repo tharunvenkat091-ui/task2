@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827"><title>Dayflow — To-Do List</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<aside class="sidebar">
+<a class="brand" href="#"><span class="brand-icon">✓</span> dayflow<span class="dot">.</span></a>
+<p class="label">WORKSPACE</p>
+<button class="filter active" data-filter="all">▦ <span>All tasks</span><b id="all-count">0</b></button>
+<button class="filter" data-filter="today">◷ <span>Today</span><b id="today-count">0</b></button>
+<button class="filter" data-filter="completed">✓ <span>Completed</span><b id="completed-count">0</b></button>
+<div class="sidebar-note"><span>✦</span><strong>Make space for focus.</strong><p>One clear task is a good place to start.</p></div>
+</aside>
+<section class="content">
+<header class="top"><span id="date-label">YOUR DAY, YOUR WAY</span><span class="pill"><i></i> Personal workspace</span></header>
+<section class="hero"><div><p class="eyebrow">A LITTLE PROGRESS, EVERY DAY</p><h1 id="greeting">Let's make today count<span>.</span></h1><p class="muted">Organize your thoughts. Focus on what matters.</p></div>
+<div class="progress-card"><div class="ring" id="ring"><div><b id="percent">0%</b><small>done</small></div></div><div><b>Your progress</b><p id="progress-copy">A fresh start awaits.</p></div></div></section>
+<form id="task-form" class="composer"><div class="input-row"><span>＋</span><input id="task-input" maxlength="160" placeholder="Add a task to your day..." required aria-label="Task title"></div>
+<div class="form-bottom"><label>PRIORITY<select id="priority"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select></label><label>DUE DATE<input id="due-date" type="date"></label><button class="add-btn" type="submit">Add task ↗</button></div></form>
+<div class="list-heading"><div><p class="eyebrow">YOUR LIST</p><h2 id="list-title">All tasks <small id="visible-count">0</small></h2></div><div class="tools"><input id="search" type="search" placeholder="⌕  Search tasks..." aria-label="Search tasks"><select id="sort" aria-label="Sort tasks"><option value="recent">Recently added</option><option value="priority">Priority</option><option value="date">Due date</option></select></div></div>
+<div id="task-list" class="task-list" aria-live="polite"></div>
+<div id="empty" class="empty"><div>✧</div><h3>Nothing on your list yet</h3><p>Add your first task above and build some momentum.</p></div>
+<footer><span id="summary">Made for your everyday wins.</span><button id="clear-completed" type="button">Clear completed</button></footer>
+</section></main><div id="toast" role="status" class="toast"></div><script src="script.js"></script>
+</body></html>
